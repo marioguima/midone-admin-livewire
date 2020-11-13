@@ -12,9 +12,11 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function loadPage($layout = 'side-menu', $theme = 'light', $pageName = 'dashboard')
+    // public function loadPage($layout = 'side-menu', $theme = 'light', $pageName = 'dashboard')
+    public function loadPage($layout = 'side-menu', $theme = 'dark', $pageName = 'dashboard')
     {
         $activeMenu = $this->activeMenu($layout, $pageName);
+        // dd($pageName);
         return view('pages/' . $pageName, [
             'top_menu' => $this->topMenu(),
             'side_menu' => $this->sideMenu(),
@@ -59,7 +61,7 @@ class PageController extends Controller
                                     $firstPageName = $menu['page_name'];
                                     $secondPageName = $subMenu['page_name'];
                                     $thirdPageName = $lastSubmenu['page_name'];
-                                }       
+                                }
                             }
                         }
                     }
@@ -84,7 +86,7 @@ class PageController extends Controller
                                     $firstPageName = $menu['page_name'];
                                     $secondPageName = $subMenu['page_name'];
                                     $thirdPageName = $lastSubmenu['page_name'];
-                                }       
+                                }
                             }
                         }
                     }
@@ -109,7 +111,7 @@ class PageController extends Controller
                                     $firstPageName = $menu['page_name'];
                                     $secondPageName = $subMenu['page_name'];
                                     $thirdPageName = $lastSubmenu['page_name'];
-                                }       
+                                }
                             }
                         }
                     }
@@ -163,6 +165,12 @@ class PageController extends Controller
                         'title' => 'Top Menu'
                     ]
                 ]
+            ],
+            'event' => [
+                'icon' => 'video',
+                'layout' => 'side-menu',
+                'page_name' => 'event.index',
+                'title' => 'Event'
             ],
             'inbox' => [
                 'icon' => 'inbox',

@@ -29,7 +29,7 @@
                     <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
                     <div class="intro-x mt-8">
                         <form id="login-form">
-                            <input type="text" id="input-email" class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" value="midone@left4code.com">
+                            <input type="text" id="input-email" class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" value="contato@marioguimaraes.com.br">
                             <div id="error-email" class="login__input-error w-5/6 text-theme-6 mt-2"></div>
                             <input type="password" id="input-password" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Password" value="password">
                             <div id="error-password" class="login__input-error w-5/6 text-theme-6 mt-2"></div>
@@ -53,7 +53,7 @@
             </div>
             <!-- END: Login Form -->
         </div>
-    </div>    
+    </div>
 @endsection
 
 @section('script')
@@ -68,7 +68,7 @@
                 let email = cash('#input-email').val()
                 let password = cash('#input-password').val()
                 let rememberMe = cash('#input-remember-me').val()
-                
+
                 // Loading state
                 cash('#btn-login').html('<i data-loading-icon="oval" data-color="white" class="w-5 h-5 mx-auto"></i>').svgLoader()
                 await helper.delay(1500)
@@ -98,7 +98,7 @@
                     login()
                 }
             })
-            
+
             cash('#btn-login').on('click', function() {
                 login()
             })

@@ -1,8 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PageController;
+
+use App\Http\Controllers\{
+    AuthController,
+    PageController
+};
+
+use App\Http\Livewire\{
+    ShowEvents
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +31,16 @@ Route::middleware('loggedin')->group(function() {
 
 Route::middleware('auth')->group(function() {
     Route::get('/', [PageController::class, 'loadPage'])->name('dashboard');
+    // Route::get('/events', ShowEvents::class)->name('events');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('page/{layout}/{theme}/{pageName}', [PageController::class, 'loadPage'])->name('page');
 });
 
+// Registrando um serviço de exemplo
+// App::bind('LogExemplo', function($app) {
+//     return "Log Registrado";
+// });
+
+// $exemplo = App::make('LogExemplo');
+
+// dd($exemplo);

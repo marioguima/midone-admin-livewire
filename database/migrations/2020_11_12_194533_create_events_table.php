@@ -15,16 +15,12 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('short_description');
             $table->string('long_description');
             $table->string('image');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                        ->references('id')
-                        ->on('users');
         });
     }
 

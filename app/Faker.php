@@ -66,11 +66,11 @@ class Faker
         return collect($photos)->random(10);
     }
 
-    public static function fakeDates()
+    public static function fakeDates($format = 'j F Y')
     {
         $dates = [];
         for ($i = 0; $i < 5; $i++) {
-            $dates[] = date("j F Y", mt_rand(1586584776897, 1672333200000) / 1000);
+            $dates[] = date($format, mt_rand(1586584776897, 1672333200000) / 1000);
         }
         return collect($dates)->random(3);
     }
@@ -224,5 +224,32 @@ class Faker
         ]);
 
         return $foods->shuffle();
+    }
+
+    public static function fakeEvents()
+    {
+        $events = collect([
+            [ 'title' => 'Semana do Destravar do Metatabolismo', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 1', 'long_description' => 'Webinário número 1', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Imersão do Emagrecimento', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 2', 'long_description' => 'Webinário número 2', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Projeto Verão Magra', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 3', 'long_description' => 'Webinário número 3', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Você Magra o Ano Todo', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 4', 'long_description' => 'Webinário número 4', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Magra Para Sempre', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 5', 'long_description' => 'Webinário número 5', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Magra Sem Limite', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 6', 'long_description' => 'Webinário número 6', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Sou Magra', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 7', 'long_description' => 'Webinário número 7', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Mamãe Sarada', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 8', 'long_description' => 'Webinário número 8', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Agora Sou Magra', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 9', 'long_description' => 'Webinário número 9', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Magra, Bonita e Rica', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 10', 'long_description' => 'Webinário número 10', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Magra Hoje e Sempre', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 11', 'long_description' => 'Webinário número 11', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Finalmente Magra', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 12', 'long_description' => 'Webinário número 12', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Consegui Emagrecer', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 13', 'long_description' => 'Webinário número 13', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Perder Barriga de Vez', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 14', 'long_description' => 'Webinário número 14', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Projeto Acelerada', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 15', 'long_description' => 'Webinário número 15', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Metabolismo Acelerado', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 16', 'long_description' => 'Webinário número 16', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Desbloquear o Emagrecimento', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 17', 'long_description' => 'Webinário número 17', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Destravando o Emagrecimento', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 18', 'long_description' => 'Webinário número 18', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ],
+            [ 'title' => 'Desafio 14 Dias', 'image' => Faker::fakePhotos()->first(), 'short_description' => 'Evento 19', 'long_description' => 'Webinário número 19', 'scheduled' => Faker::fakeDates('Y-m-d H:i:s')->first() ]
+        ]);
+
+        return $events->shuffle();
     }
 }

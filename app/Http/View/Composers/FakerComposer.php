@@ -32,7 +32,8 @@ class FakerComposer
                 'files' => Faker::fakeFiles(),
                 'jobs' => Faker::fakeJobs(),
                 'notification_count' => Faker::fakeNotificationCount(),
-                'foods' => Faker::fakeFoods()
+                'foods' => Faker::fakeFoods(),
+                'events' => Faker::fakeEvents(),
             ];
         }
 

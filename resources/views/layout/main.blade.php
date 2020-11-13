@@ -12,5 +12,7 @@
         <!-- END: JS Assets-->
 
         @yield('script')
+
+        @livewireScripts
     </body>
 @endsection
